@@ -35,8 +35,8 @@ colnames(Activity_summarize)[2]<-"Activity"
 
 
 Activity_summarize<-Activity_summarize%>%
-  select(-V1,-Subject)%>%
-    group_by(Activity)%>%
+  select(-V1)%>%
+    group_by(Subject,Activity)%>%
       summarize_each(funs(mean))
 
 write.csv(Activity_summarize,file="tidy.csv")
