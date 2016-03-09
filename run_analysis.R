@@ -39,6 +39,6 @@ Activity_summarize<-Activity_summarize%>%
     group_by(Activity)%>%
       summarize_each(funs(mean))
 
-
+write.csv(Activity_summarize,file="tidy.csv")
 
 
